@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+  <title>Starter Template - Materialize</title>
+
+  <!-- CSS  -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="./static/css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+  <link href="./static/css2/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+</head>
+
+<body>
+  <nav class="light-blue lighten-1" role="navigation">
+    <div class="nav-wrapper container"><a id="logo-container" href="#" class="brand-logo">Logo</a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+        <li><a href="#">Navbar Link</a></li>
+      </ul>
+      <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+    </div>
+  </nav>
+
+
+  <div class="section no-pad-bot" id="index-banner">
+    <div class="container">
+      <br><br>
+      <h1 class="header center orange-text">Loan Prediction</h1>
+      <div class="row center">
+        <h5 class="header col s12 light">Predict Whether Your Loan Will Ee Approved Or Not
+        <br>
+        </h5>
+      </div>
+
+              <div class="row">
+    <form action='/predict' method="GET|POST" class="col s12">
+      <div class="row">
+        <div class="input-field col s4">
+            <label for="Gender"><b>Gender</b></label>
+          <select name="Gender" id="gender">
+            <option value="1">Male</option>
+            <option value="0">Female</option>
+          </select>
+            <br>
+        </div>
+        <div class="input-field col s4">
+          <label for="Married"><b>Married</b></label>
+           <select name="Married" id="married">
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+           </select>
+
+        </div>
+
+        <div class="input-field col s4">
+          <label for="Dependents"><b>Dependents</b></label>
+           <select name="Dependents" id="dependents">
+             <option value="0">0</option>
+             <option value="1">1</option>
+             <option value="2">2</option>
+             <option value="3">3+</option>
+           </select>
+
+        </div>
+          <div class="input-field col s4">
+            <label for="Education"><b>Education</b></label>
+             <select name="Education" id="education">
+               <option value="1">Graduate</option>
+               <option value="0">Not Graduate</option>
+             </select>
+        </div>
+        <div class="input-field col s4">
+           <label for="Self_Employed"><b>Self Employed</b></label>
+             <select name="Self_Employed" id="self_employed">
+               <option value="1">Yes</option>
+               <option value="0">No</option>
+             </select>
+
+        </div>
+
+        <div class="input-field col s4">
+            <label for="ApplicantIncome"><b>Applicant Income</b></label>
+            <br>
+          <input id="applicantincome" name="ApplicantIncome" placeholder="Applicant's Income in Dollars($)" type="text" class="validate">
+
+        </div>
+          <div class="input-field col s4">
+            <label for="CoapplicantIncome"><b>Co-applicant Income</b></label>
+            <br>
+          <input placeholder="Co-applicant'sIncome in Dollars" name="CoapplicantIncome" id="coapplicantincome" type="text" class="validate">
+        </div>
+        <div class="input-field col s4">
+
+          <label for="LoanAmount"><b>LoanAmount </b></label>
+            <br>
+          <input id="loanamount" name="LoanAmount" placeholder="Loan Amount in Dollars($)"  type="text" class="validate">
+
+        </div>
+
+        <div class="input-field col s4">
+            <label for="Loan_Amount_Term"><b>Loan Amount Term</b></label>
+             <select name="Loan_Amount_Term" id="loan_amount_term">
+               <option value="12">12 Months</option>
+               <option value="36">36 Months</option>
+               <option value="60">60 Months</option>
+               <option value="84">84 Months</option>
+               <option value="120">120 Months</option>
+               <option value="180">180 Months</option>
+               <option value="240">240 Months</option>
+               <option value="300">300 Months</option>
+               <option value="360">360 Months</option>
+               <option value="480">480 Months</option>
+             </select>
+
+        </div>
+          <div class="input-field col s4">
+            <label for="Credit_History"><b>Credit History</b></label>
+             <select name="Credit_History" id="credit_history">
+               <option value="1">Yes</option>
+               <option value="0">No</option>
+             </select>
+        </div>
+        <div class="input-field col s4">
+           <label for="Property_Area"><b>Property Area</b></label>
+             <select name="Property_Area" id="property_area">
+               <option value="1">Urban</option>
+               <option value="2">Semiurban</option>
+               <option value="3">Rural</option>
+             </select>
+
+        </div>
+
+      </div>
+
+      <div class="row center">
+
+          <button type="submit" class="btn-large waves-effect waves-light orange">Check Loan Status</button>
+      </div>
+    </form>
+      </div>
+
+      <br>
+        {{pred}}
+      <br>
+
+    </div>
+  </div>
+
+
+    <br><br>
+  </div>
+  </div>>
+
+  <footer class="page-footer orange">
+    <div class="container">
+      <div class="row">
+        <div class="col l6 s12">
+          <h5 class="white-text">Company Bio</h5>
+          <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+
+
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Settings</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+        <div class="col l3 s12">
+          <h5 class="white-text">Connect</h5>
+          <ul>
+            <li><a class="white-text" href="#!">Link 1</a></li>
+            <li><a class="white-text" href="#!">Link 2</a></li>
+            <li><a class="white-text" href="#!">Link 3</a></li>
+            <li><a class="white-text" href="#!">Link 4</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+      Made by <a class="orange-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!--  Scripts-->
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="C:/Users/kabad/PycharmProjects/pythonProject/materialize.js"></script>
+  <script src="js/init.js"></script>
+
+  </body>
+</html>
